@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container pt-4">
+    <h1 class="display-4 text-center">Análisis probabilidad de sufrir un infarto</h1>
+    <h6 class="text-center">El infarto de miocardio se produce por la obstrucción de una arteria coronaria, que son aquellas que nutren al corazón. Esta es la principal causa de muerte a nivel mundial, en donde se registran 14 millones de casos por año, y a su vez también lo es a nivel local, por arriba del cáncer y de otras enfermedades infecciosas como el SIDA.</h6>
+    <div class="row pt-4">
+        <div class="col">
+            <form method="POST">
+                <div class="mb-1 row">
+                    <label for="inputAge" class="col-sm-4 col-form-label">Edad</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="age">
+                    </div>
+                </div>
+                <div class="mb-1 row">
+                    <label class="form-check-label col-sm-4" for="flexCheckIndeterminate">Anemia</label>
+                    <div class="col-sm-8">
+                        <input type="hidden" value="0" name="anemia">
+                        <input class="form-check-input" type="checkbox" value="1" name="anemia">
+                    </div>
+                </div>
+                <div class="mb-1 row">
+                    <label for="inputAge" class="col-sm-4 col-form-label">Creatina Quinasa</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="creatina_quin" placeholder="mcg / L">
+                    </div>
+                </div>
+                <div class="mb-1 row">
+                    <label class="form-check-label col-sm-4" for="flexCheckIndeterminate">Diabetes</label>
+                    <div class="col-sm-8">
+                        <input type="hidden" value="0" name="diabetes">
+                        <input class="form-check-input" type="checkbox" value="1" name="diabetes">
+                    </div>
+                </div>
+                <div class="mb-1 row">
+                    <label for="inputAge" class="col-sm-4 col-form-label">Fracción de Eyección</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="eyection" placeholder="%">
+                    </div>
+                </div>
+                <div class="mb-1 row">
+                    <label class="form-check-label col-sm-4" for="flexCheckIndeterminate">Presión Alta</label>
+                    <div class="col-sm-8">
+                        <input type="hidden" value="0" name="hpb">
+                        <input class="form-check-input" type="checkbox" value="1" name="hpb">
+                    </div>
+                </div>
+                <div class="mb-1 row">
+                    <label for="inputAge" class="col-sm-4 col-form-label">Plaquetas</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="plaquetas" placeholder="kiloplaquetas / mL">
+                    </div>
+                </div>
+                <div class="mb-1 row">
+                    <label for="inputAge" class="col-sm-4 col-form-label">Creatinina</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="creatina" placeholder="mg / dL">
+                    </div>
+                </div>
+                <div class="mb-1 row">
+                    <label for="inputAge" class="col-sm-4 col-form-label">Sodio</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="sodio" placeholder="mEq / L">
+                    </div>
+                </div>
+                <div class="mb-1 row">
+                    <label for="inputAge" class="col-sm-4 col-form-label">Sexo</label>
+                    <div class="col-sm-8">
+                        <select class="form-select" aria-label="Default select example" name="sex">
+                            <option selected>Seleccionar</option>
+                            <option value="0">Femenino</option>
+                            <option value="1">Masculino</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="mb-1 row">
+                    <label class="form-check-label col-sm-4" for="flexCheckIndeterminate">Fumador/a</label>
+                    <div class="col-sm-8">
+                        <input type="hidden" value="0" name="smoke">
+                        <input class="form-check-input" type="checkbox" value="1" name="smoke">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mb-1">Analizar</button>
+            </form>
+        </div>
+        <div class="col">
+            <h1 class="display-3 text-center" style="color: blue;">Probabilidad: {{ result }}</h1>
+            <div class="pt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">¿Cómo prevenir el infarto?</h5>
+                        <p class="card-text">
+                            <ul>
+                                <li>NO FUMAR</li>
+                                <li>ACTIVIDAD AERÓBICA 3 VECES POR SEMANA</li>
+                                <li>ALIMENTACIÓN SALUDABLE</li>
+                            </ul>
+                        </p>
+                        <a href="https://www.fundacionfavaloro.org/las-enfermedades-del-corazon-son-la-primera-causa-de-muerte-en-el-mundo-7-pasos-para-mantenerlo-sano/" class="card-link">Artículo Fundación Favaloro</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center pt-4">
+                <p><em>Este proyecto tiene fines exclusivamente didácticos y los valores aquí presentados no tienen ningún valor médico.</em></p>
+            </div>
+        </div>
+    </div>
+    
+</div>
+{% endblock %}
